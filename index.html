@@ -19,7 +19,7 @@
     }
     .container { width: 100%; max-width: 360px; text-align: center; }
     
-    /* Logo Section - Exact 1st Image Style */
+    /* Logo Section */
     .logo-section {
       display: flex;
       flex-direction: column;
@@ -47,9 +47,15 @@
     }
     .input-group:focus-within { border-color: #008a45; }
     .input-group svg { 
-      width: 24px; height: 24px; fill: none; stroke: #1e293b; 
-      stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; 
+      width: 24px; height: 24px; 
       margin-right: 14px; flex-shrink: 0; 
+    }
+    .input-group svg.outline-icon {
+      fill: none; stroke: #1e293b; 
+      stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; 
+    }
+    .input-group svg.solid-green-icon {
+      fill: #008a45; stroke: none;
     }
     .input-group input {
       background: transparent; border: none; color: #1e293b;
@@ -98,7 +104,7 @@
     }
     .checkbox-container a { color: #008a45; text-decoration: underline; font-weight: 500; }
 
-    /* Button - Exact Dark Green from 1st Image */
+    /* Button */
     .btn-main {
       width: 100%; padding: 15px;
       background: #008a45;
@@ -177,7 +183,7 @@
     .toast.show { transform: translateX(-50%) translateY(0); }
     .toast.error { background: #ef4444; }
     
-    /* Footer Version - Bottom Right Exact Position */
+    /* Footer Version */
     .version { 
       position: fixed; 
       bottom: 18px; 
@@ -202,20 +208,22 @@
 
     <!-- PHONE INPUT -->
     <div class="input-group">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="9" r="3"></circle><path d="M6.168 18.849A4 4 0 0 1 10 16h4a4 4 0 0 1 3.834 2.855"></path></svg>
+      <svg class="outline-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="9" r="3"></circle><path d="M6.168 18.849A4 4 0 0 1 10 16h4a4 4 0 0 1 3.834 2.855"></path></svg>
       <input type="tel" id="phone" placeholder="Phone" maxlength="10" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0,10)">
     </div>
 
     <!-- PASSWORD INPUT -->
     <div class="input-group">
-      <svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path><line x1="12" y1="14" x2="12" y2="17"></line></svg>
+      <svg class="outline-icon" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path><line x1="12" y1="14" x2="12" y2="17"></line></svg>
       <input type="password" id="pass" placeholder="Password">
     </div>
 
-    <!-- PIN INPUT -->
+    <!-- PIN INPUT (Solid Green Key Icon) -->
     <div class="input-group">
-      <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-      <input type="password" id="pinInput" placeholder="Pin" maxlength="6" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0,6)">
+      <svg class="solid-green-icon" viewBox="0 0 24 24">
+        <path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" transform="rotate(-45 12 12)"/>
+      </svg>
+      <input type="password" id="pinInput" placeholder="6-digit PIN" maxlength="6" inputmode="numeric" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0,6)">
     </div>
 
     <!-- REMEMBER / REGISTER -->
